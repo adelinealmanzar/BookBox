@@ -78,79 +78,101 @@
 },
 {
     "id": 7,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":,
-        "comment":
-    }]
+    "title": "Never Split the Difference: Negotiating As If Your Life Depended On It",
+    "author": "Chriss Voss",
+    "genre": "Nonfiction",
+    "pages": 288,
+    "blurb": "After a stint policing the rough streets of Kansas City, Missouri, Chris Voss joined the FBI, where his career as a hostage negotiator brought him face-to-face with a range of criminals, including bank robbers and terrorists. Reaching the pinnacle of his profession, he became the FBI’s lead international kidnapping negotiator. Never Split the Difference takes you inside the world of high-stakes negotiations and into Voss’s head, revealing the skills that helped him and his colleagues succeed where it mattered most: saving lives. In this practical guide, he shares the nine effective principles―counterintuitive tactics and strategies―you too can use to become more persuasive in both your professional and personal life.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51x2TUCaM4L._SX323_BO1,204,203,200_.jpg",
+    "avgRating": 5,
+    "reviews": [
+        {
+            "rating": 5,
+            "comment": "Awesome book! I was able to negotiate the rent with my landlord by following this book."
+        }
+    ]
 },
 {
     "id": 8,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":,
-        "comment":
-    }]
+    "title": "Burnout",
+    "author": "Emily Nagoski PhD & Amelia Nagoski DMA",
+    "genre": "Nonfiction",
+    "pages": 304,
+    "blurb": "Sisters Emily Nagoski, PhD, and Amelia Nagoski, DMA, are here to help end the cycle of feeling overwhelmed and exhausted. Instead of asking us to ignore the very real obstacles and societal pressures that stand between women and well-being, they explain with compassion and optimism what we’re up against—and show us how to fight back. ",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51hMe6lYKJL._SX325_BO1,204,203,200_.jpg",
+    "avgRating": 4,
+    "reviews": [
+        {
+            "rating": 4,
+            "comment": "Burnout was an enlightening book on the compounding struggles of pushing oneself daily. I loved that this book gave science-backed methods to avoid burnout and work our way out of it."
+        }
+    ]
 },
 {
     "id": 9,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":,
-        "comment":
-    }]
+    "title": "The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma",
+    "author": "Bessel van der Kolk",
+    "genre": "Nonfiction",
+    "pages": 466,
+    "blurb": "Trauma is a fact of life. Veterans and their families deal with the painful aftermath of combat; one in five Americans has been molested; one in four grew up with alcoholics; one in three couples have engaged in physical violence. Dr. Bessel van der Kolk, one of the world’s foremost experts on trauma, has spent more than three decades working with survivors. In The Body Keeps the Score, he uses recent scientific advances to show how trauma literally reshapes both body and brain, compromising sufferers’ capacities for pleasure, engagement, self-control, and trust. He explores innovative treatments - from neurofeedback and meditation to sports, drama, and yoga - that offer new paths to recovery by activating the brain’s natural neuroplasticity. Based on Dr. van der Kolk’s own research and that of other leading specialists, The Body Keeps the Score exposes the tremendous power of our relationships both to hurt and to heal - and offers new hope for reclaiming lives.",
+    "image": "https://m.media-amazon.com/images/I/41QoSehePcL.jpg",
+    "avgRating": 5,
+    "reviews": [
+        {
+            "rating": 5,
+            "comment": "A deeply upsetting but important book."
+        }
+    ]
 },
 {
     "id": 10,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":,
-        "comment":
-    }]
+    "title": "Misery",
+    "author": "Stephen King",
+    "genre": "Fiction",
+    "pages": 368,
+    "blurb": "Paul Sheldon is a bestselling novelist who has finally met his number one fan. Her name is Annie Wilkes, and she is more than a rabid reader—she is Paul’s nurse, tending his shattered body after an automobile accident. But she is also furious that the author has killed off her favorite character in his latest book. Annie becomes his captor, keeping him prisoner in her isolated house. /n Annie wants Paul to write a book that brings Misery back to life—just for her. She has a lot of ways to spur him on. One is a needle. Another is an axe. And if they don’t work, she can get really nasty.",
+    "image":"https://images-na.ssl-images-amazon.com/images/I/51SSlC2WctL._SX326_BO1,204,203,200_.jpg",
+    "avgRating": 5,
+    "reviews": [
+        {
+            "rating": 5,
+            "comment": "Yet again King's writing is terrifyingly beautiful. I was deeply horrified by Annie Wilkes."
+        }
+    ]
 },
 {
     "id": 11,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":,
-        "comment":
-    }]
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genre": "Fiction",
+    "pages": 224,
+    "blurb": "At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys. At first, with no adult supervision, their freedom is something to celebrate. This far from civilization they can do anything they want. Anything. But as order collapses, as strange howls echo in the night, as terror begins its reign, the hope of adventure seems as far removed from reality as the hope of being rescued.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    "avgRating": 4.5,
+    "reviews": [
+        {
+            "rating": 4,
+            "comment": "A classic, Golding does a fantastic job of hypothesizing a child's human nature and taking that to a devastating degree."
+        },
+        {
+            "rating": 5,
+            "comment": "Riveting. I felt like I was one of the children on this island."
+        }
+    ]
 },
 {
     "id": 12,
-    "title": "Twilight",
-    "author": "Stephanie Meyer",
-    "pages": 498,
-    "blurb":,
-    "image":,
-    "avgRating":,
-    "reviews": [{
-        "rating":5,
-        "comment":"asdf"
-    }]
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "genre": "Fiction",
+    "pages": 416,
+    "blurb": "A tale of gods, kings, immortal fame, and the human heart, The Song of Achilles is a dazzling literary feat that brilliantly reimagines Homer’s enduring masterwork, The Iliad. An action-packed adventure, an epic love story, a marvelously conceived and executed page-turner, Miller’s monumental debut novel has already earned resounding acclaim from some of contemporary fiction’s brightest lights—and fans of Mary Renault, Bernard Cornwell, Steven Pressfield, and Colleen McCullough’s Masters of Rome series will delight in this unforgettable journey back to ancient Greece in the Age of Heroes.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/514aE49swxL._SX330_BO1,204,203,200_.jpg",
+    "avgRating": 4,
+    "reviews": [
+        {
+            "rating": 4,
+            "comment":"It was devastating and beautiful to read the painful romance between Patroclus and Achilles."
+        }
+    ]
 }]
