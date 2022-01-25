@@ -60,6 +60,7 @@ body {
   }
   
   img {
-    max-width: 25vw;
+    width: 20vw;
+    height: 30vw;
   }
   
