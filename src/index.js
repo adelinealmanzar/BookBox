@@ -7,6 +7,7 @@ const coverImg = document.getElementById('cover')
 const stars = document.getElementById('star-rating')
 const reviewCount = document.getElementById('review-count')
 const reviewListUl = document.getElementById('reviews-list')
+const form = document.querySelector('form')
 
 fetch('http://localhost:3000/Books')
     .then(res => res.json())
@@ -24,11 +25,11 @@ function renderBookInfo(book){
     pages.textContent = `${book.pages} pages`
     blurb.textContent = book.blurb
     coverImg.src = book.image
-    stars.textContent = reviewTotal/book.reviews.length
+    stars.textContent = `${(reviewTotal/book.reviews.length).toFixed(1)} out of 5`
     reviewCount.textContent = (book.reviews.length === 1) ? `${book.reviews.length} review` : `${book.reviews.length} reviews`
-    let newDiv = document.createElement('div')
     removeAllChildren(reviewListUl)
     renderBookReviews(book)
+    submitNewReview(book)
 }
 
 function removeAllChildren(parent) {
@@ -56,9 +57,54 @@ function renderBookList(booksArr) {
     booksArr.forEach(book => {
         let newBookLi = document.createElement('li')
         newBookLi.textContent = book.title
-        newBookLi.id = book.id
+
+        let bookID = book.id
+        newBookLi.id = bookID
         bookList.append(newBookLi)
 
         newBookLi.addEventListener('click', e => renderBookInfo(book))
+    })
+}
+
+function submitNewReview(book) {
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        let ratingInputValue = e.target.querySelector('input').value
+        let commentInputValue = e.target.querySelector('textarea').value
+
+        let newReviewObj = {
+            "rating": parseInt(ratingInputValue, 10),
+            "comment": commentInputValue
+        }
+        book.reviews.unshift(newReviewObj)
+        bookReviewsArr = book.reviews
+        console.log(book.reviews)
+
+        let wholeBookObj = {
+            "id": book.id,
+            "title": book.title,
+            "author": book.author,
+            "genre": book.genre,
+            "pages": book.pages,
+            "blurb": book.blurb,
+            "image": book.image,
+            "reviews": bookReviewsArr
+        }
+
+        function postNewBookRating(obj) {
+            fetch(`http://localhost:3000/Books/${book.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        }
+        postNewBookRating(wholeBookObj)
+        renderBookInfo(book)
     })
 }
