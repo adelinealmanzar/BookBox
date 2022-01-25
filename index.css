@@ -1,0 +1,65 @@
+body {
+    background-color: #ebebeb;
+  }
+  
+  .heading {
+    background-color: #333333;
+    margin-bottom: 20px;
+    padding: 5px 0px 5px 15px;
+  }
+
+  .sub.header {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+    color: rgba(0, 0, 0, .5)
+    }
+  
+  .stars {
+    background-color: #333333;
+    padding: 5px;
+    color: white;
+  }
+  
+  #review-count{
+    background-color: #333333;
+    color: #3e8fde;
+    padding: 0px 0px 5px 5px;
+  }
+
+  .horizontal {
+    display: inline-block;
+    width: 50%
+  }
+  
+  .blue {
+    color: #3e8fde;
+  }
+  
+  #review-form {
+    text-align: center;
+  }
+
+  #review-list {
+    text-align: center;
+  }
+
+  #subtitle {
+    color: white;
+    margin-left: 55px;
+  }
+  
+  #avg-info {
+    margin-left: 20px;
+  }
+  
+  .booklist {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
+  img {
+    max-width: 25vw;
+  }
+  
