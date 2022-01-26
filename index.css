@@ -35,7 +35,7 @@ body {
 
   #books {
     font-size: 16px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
 
   /*
@@ -47,8 +47,8 @@ body {
   }
 
   img {
-    width: 20vw;
-    height: 30vw;
+    width: 28vw;
+    height: 40vw;
   }
 
   /*
@@ -95,4 +95,31 @@ body {
   
   #avg-info {
     margin-left: 20px;
+  }
+
+  #above-img-info {
+    padding-bottom: 0em;
+  }
+
+  #author-and-title {
+    height: 50px;
+    white-space: nowrap;
+  }
+  #pages {
+    white-space: nowrap;
+    padding: 1em;
+    text-align: right;
+  }
+
+  #author {
+    white-space: nowrap;
+    font-size: medium;
+    font-weight: normal;
+  }
+
+  #title {
+    font-size: 25px;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 300px;
+    height: auto;
   }
