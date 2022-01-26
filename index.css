@@ -1,6 +1,63 @@
+/* html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px
+} */
+
 body {
     background-color: #ebebeb;
+}
+  /*
+  Overall Structure
+  */
+
+  /*
+  * # Semantic UI - 1.11.8
+  * https://github.com/Semantic-Org/Semantic-UI
+  * http://www.semantic-ui.com/
+  *
+  * Copyright 2014 Contributors
+  * Released under the MIT license
+  * http://opensource.org/licenses/MIT
+  *
+  */
+  /* .ui.centered.grid,
+  .ui.centered.grid>.row,
+  .ui.grid>.centered.row {
+      text-align: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center
   }
+ 
+  .ui.column.grid>[class*="five wide"].column,
+  .ui.grid>.column.row>[class*="five wide"].column,
+  .ui.grid>.row>[class*="five wide"].column,
+  .ui.grid>[class*="five wide"].column {
+      width: 31.25%!important
+  }
+
+  .ui.divided.list>.item {
+    border-top: 1px solid rgba(39, 41, 43, .15)
+  }
+
+  .ui.divided.list .item .list>.item,
+  .ui.divided.list .list>.item,
+  .ui.divided.list .list>.item:first-child,
+  .ui.divided.list>.item:first-child {
+    border-top: none
+  }
+
+  .ui.divided.list:not(.horizontal) .list>.item:first-child {
+    border-top-width: 1px
+  } */
+
+  /*
+  Header/Page title
+  */
   
   .heading {
     background-color: #333333;
@@ -16,6 +73,60 @@ body {
     color: rgba(0, 0, 0, .5)
     }
   
+  #subtitle {
+    color: white;
+    margin-left: 55px;
+  }
+  
+
+  /*
+  Book list/left
+  */
+
+  #books {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  /*
+  Book image/pg middle
+  */
+  .horizontal {
+    display: inline-block;
+    width: 50%
+  }
+
+  img {
+    width: 20vw;
+    height: 30vw;
+  }
+
+  /* .ui.card .image>.ribbon.label,
+  .ui.image>.ribbon.label {
+      position: absolute;
+      top: 1rem
+  }
+  
+  .ui.card .image>.ui.ribbon.label,
+  .ui.image>.ui.ribbon.label {
+      left: -webkit-calc(.05rem - 1.2em);
+      left: calc(.05rem - 1.2em);
+      padding-left: -webkit-calc(-.05rem + 1.2em);
+      padding-left: calc(-.05rem + 1.2em)
+  }
+  
+  .ui.card .image>.ui[class*="right ribbon"].label,
+  .ui.image>.ui[class*="right ribbon"].label {
+      left: -webkit-calc(100% + -.05rem + 1.2em);
+      left: calc(100% + -.05rem + 1.2em);
+      padding-left: .8em;
+      padding-right: -webkit-calc(-.05rem + 1.2em);
+      padding-right: calc(-.05rem + 1.2em)
+  } */
+
+  /*
+  Average Info
+  */
   .stars {
     background-color: #333333;
     padding: 5px;
@@ -28,10 +139,9 @@ body {
     padding: 0px 0px 5px 5px;
   }
 
-  .horizontal {
-    display: inline-block;
-    width: 50%
-  }
+  /*
+  Form
+  */
   
   .blue {
     color: #3e8fde;
@@ -41,31 +151,21 @@ body {
     text-align: center;
   }
 
-  #review-list {
-    text-align: center;
-  }
-
-  #subtitle {
-    color: white;
-    margin-left: 55px;
-  }
-  
-  #avg-info {
-    margin-left: 20px;
-  }
-  
-  .booklist {
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  img {
-    width: 20vw;
-    height: 30vw;
-  }
-  
   #comment-input {
     height: 100px;
     inline-size: 100px;
     width: 200px;
+  }
+
+  /*
+  List of reviews/pg bottom
+  */
+
+  #review-list {
+    text-align: center;
+  }
+
+  
+  #avg-info {
+    margin-left: 20px;
   }
