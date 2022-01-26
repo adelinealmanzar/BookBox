@@ -64,3 +64,8 @@ body {
     height: 30vw;
   }
   
+  #comment-input {
+    height: 100px;
+    inline-size: 100px;
+    width: 200px;
+  }
