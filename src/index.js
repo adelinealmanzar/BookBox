@@ -48,7 +48,28 @@ function renderBookReviews(book) {
         let newCommentP = document.createElement('p') //TODO: maybe global scope
         newCommentP.textContent = `Comment: ${review.comment}`
 
-        newDiv.append(newRatingP, newCommentP)
+        let deleteButton = document.createElement('button')
+        deleteButton.textContent =' X '
+        let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
+        
+        deleteButton.addEventListener('click', e => {
+            newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
+            let wholeBookObj = {
+                "id": book.id,
+                "title": book.title,
+                "author": book.author,
+                "genre": book.genre,
+                "pages": book.pages,
+                "blurb": book.blurb,
+                "image": book.image,
+                "reviews": newReviewsArray
+            }
+            
+            postNewBookRating(wholeBookObj)
+            e.target.parentNode.remove()
+        })
+
+        newDiv.append(newRatingP, newCommentP, deleteButton)
         reviewListUl.appendChild(newDiv)
     })
 }
@@ -96,20 +117,22 @@ form.addEventListener('submit', e => {
         "reviews": bookReviewsArr
     }
 
-    function postNewBookRating(obj) {
-        fetch(`http://localhost:3000/Books/${book.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(obj)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
-    }
+
     postNewBookRating(wholeBookObj)
     renderBookInfo(book)
     })
 })
+
+function postNewBookRating(obj) {
+    fetch(`http://localhost:3000/Books/${obj.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+}
