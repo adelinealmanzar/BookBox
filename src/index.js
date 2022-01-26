@@ -17,8 +17,7 @@ fetch('http://localhost:3000/Books')
     })
 
 function renderBookInfo(book){
-    let reviewTotal = book.reviews.reduce((total, review) => {
-        return total += review.rating },0)
+
 
     title.textContent = book.title
     title.name = book.id
@@ -26,10 +25,17 @@ function renderBookInfo(book){
     pages.textContent = `${book.pages} pages`
     blurb.textContent = book.blurb
     coverImg.src = book.image
-    stars.textContent = `${(reviewTotal/book.reviews.length).toFixed(1)} out of 5`
-    reviewCount.textContent = (book.reviews.length === 1) ? `${book.reviews.length} review` : `${book.reviews.length} reviews`
+
+    renderReviewAvg(book)
     removeAllChildren(reviewListUl)
     renderBookReviews(book)
+}
+
+function renderReviewAvg(bookObj) {
+    let reviewTotal = bookObj.reviews.reduce((total, review) => {
+        return total += review.rating },0)
+    stars.textContent = `${(reviewTotal/bookObj.reviews.length).toFixed(1)} out of 5`
+    reviewCount.textContent = (bookObj.reviews.length === 1) ? `${bookObj.reviews.length} review` : `${bookObj.reviews.length} reviews`
 }
 
 function removeAllChildren(parent) {
@@ -54,24 +60,44 @@ function renderBookReviews(book) {
         
         deleteButton.addEventListener('click', e => {
             newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
-            let wholeBookObj = {
-                "id": book.id,
-                "title": book.title,
-                "author": book.author,
-                "genre": book.genre,
-                "pages": book.pages,
-                "blurb": book.blurb,
-                "image": book.image,
-                "reviews": newReviewsArray
-            }
-            
-            postNewBookRating(wholeBookObj)
+
+            // Patch new book object with newly-created reviews array
+            postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
             e.target.parentNode.remove()
+
+            renderReviewAvg(mkBookObjToPatch(newReviewsArray, book))
         })
 
         newDiv.append(newRatingP, newCommentP, deleteButton)
         reviewListUl.appendChild(newDiv)
     })
+}
+function postNewBookRating(obj) {
+    fetch(`http://localhost:3000/Books/${obj.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+}
+
+function mkBookObjToPatch(reviewsArr, book) {
+    let wholeBookObj = {
+        "id": book.id,
+        "title": book.title,
+        "author": book.author,
+        "genre": book.genre,
+        "pages": book.pages,
+        "blurb": book.blurb,
+        "image": book.image,
+        "reviews": reviewsArr
+    }
+    return wholeBookObj
 }
 
 function renderBookList(booksArr) {
@@ -106,33 +132,8 @@ form.addEventListener('submit', e => {
        let bookReviewsArr = book.reviews
        console.log(book.reviews)
 
-    let wholeBookObj = {
-        "id": book.id,
-        "title": book.title,
-        "author": book.author,
-        "genre": book.genre,
-        "pages": book.pages,
-        "blurb": book.blurb,
-        "image": book.image,
-        "reviews": bookReviewsArr
-    }
-
-
-    postNewBookRating(wholeBookObj)
+    postNewBookRating(mkBookObjToPatch(bookReviewsArr, book))
     renderBookInfo(book)
     })
 })
 
-function postNewBookRating(obj) {
-    fetch(`http://localhost:3000/Books/${obj.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(obj)
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    })
-}
