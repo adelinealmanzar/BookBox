@@ -52,14 +52,14 @@ body {
   Average Info
   */
   .stars {
-    background-color: #333333;
+    background-color: rgb(117, 110, 110);
     padding: 5px;
-    color: white;
+    color: white
   }
   
   #review-count{
-    background-color: #333333;
-    color: #3e8fde;
+    background-color: rgb(117, 110, 110);
+    color: white;
     padding: 0px 0px 5px 5px;
   }
 
@@ -67,19 +67,36 @@ body {
   Form
   */
   
-  .blue {
-    color: #3e8fde;
+  .submit {
+    color: #000000;
+    padding: 5px;
+    border-radius: 50px;
+    margin-left: 5%;
   }
   
   #review-form {
     text-align: center;
   }
 
+  #form-element {
+    margin: 5%;
+  }
+  
+  #form-element label {
+    font-weight: bold;
+    margin-right: 5%;
+  }
+  
   #comment-input {
     height: 100px;
     inline-size: 100px;
     width: 200px;
+    border-radius: 50px;
+    padding: 21px;
+    text-align: center;
+    margin-right: 5%;
   }
+
 
   /*
   List of reviews/pg bottom
