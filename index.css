@@ -1,71 +1,245 @@
 body {
-    background-color: #ebebeb;
-  }
-  
+    background-image: url("membackground.jpeg");
+}
+  /*
+  Overall Structure
+  */
+
+  /*
+  Header/Page title
+  */
+
   .heading {
-    background-color: #333333;
-    margin-bottom: 20px;
-    padding: 5px 0px 5px 15px;
+    margin-bottom: 40px;
+    background-color: rgba(242,239,234,.9);
+    /* background-image: linear-gradient(rgba(255,196,188, 0.904), rgba(255,237,135,255)); */
+    max-height: 50%
+  }
+  #logo{
+    display: block;
+    margin: auto;
+    height: 11vw;
+    width: 14vw;
+    padding-bottom: 5px
+  }
+  .webpage-title {
+    /* background-image: url("download3.jpeg"); */
+    background-color: #f7b1d1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px 0px 30px 15px;
+    border-radius: 70px;
   }
 
-  .sub.header {
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    line-height: 1.2em;
-    color: rgba(0, 0, 0, .5)
-    }
-  
-  .stars {
-    background-color: #333333;
+  /*
+  Book list/left
+  */
+
+  #books {
+    font-size: 16px;
+    list-style-type: none;
+  }
+
+  .book-li {
+    /* border: 1px solid #000;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000000; */
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 10px;
+    background: rgba(255,196,188, 0.9);
+    font-weight: 800;
+    /* width: 200px;
+    height: 150px; */
+  }
+
+  /*
+  Book image/pg middle
+  */
+  .horizontal {
+    display: inline-block;
+  }
+
+  #author {
+    white-space: nowrap;
+    font-size: medium;
+    font-weight: 600px;
+    margin-top: 30px;
+    background-color: rgba(234, 240, 241, 0.85);
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 8px;
+    width: 66%
+  }
+
+  #title {
+    font-size: 25px;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000000;
+    background:rgba(191,223,212, 0.95)
+
+  }
+  #above-img-info {
+    padding-bottom: 0em;
+  }
+
+  #author-and-title {
+    height: 80px;
+    white-space: nowrap;
+  }
+  #pages {
+    white-space: nowrap;
+    padding: 1em;
+    text-align: right;
+    font-weight: 700px;
+    background-color: rgba(234, 240, 241, 0.85);
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 8px;
+    width:33%;
+  }
+
+  img {
+    width: 100%;
+    height: 40vw;
+  }
+
+  /*
+  Average Info
+  Right
+  */
+  .star-and-num-div {
+    /* white-space: nowrap; */
+    background-color: rgba(255,237,135,.85);
     padding: 5px;
-    color: white;
+    color: black;
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 5%;
+    margin-left: 20%;
+  }
+  .staricons {
+    white-space: nowrap;
+  }
+  .avg-stars-num {
+    white-space: nowrap;
+    padding-left: 3%;
+    padding-right: 3%
   }
   
   #review-count{
-    background-color: #333333;
-    color: #3e8fde;
-    padding: 0px 0px 5px 5px;
+    /* background-color: rgba(255,237,135,.85);
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding-left: 10px; */
+    font-size: smaller;
+    padding-right: 3%;
   }
 
-  .horizontal {
-    display: inline-block;
-    width: 50%
+  .description {
+    margin-top: 15px;
+    background-color: rgba(234, 240, 241, 0.85);
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 10px;
+    font-size: 120%
   }
+
+
+  /*
+  Form
+  */
   
-  .blue {
-    color: #3e8fde;
+  .submit {
+    color: #000000;
+    font-weight: 500px;
+    padding: 5px;
+    border-radius: 50px;
+    margin-left: 1%;
+    background-color: rgba(234, 240, 241, 0.85);
   }
   
   #review-form {
     text-align: center;
   }
 
-  #review-list {
-    text-align: center;
-  }
-
-  #subtitle {
-    color: white;
-    margin-left: 55px;
+  #form-element {
+    margin: 5%;
+    font-size: medium;
   }
   
-  #avg-info {
-    margin-left: 20px;
-  }
-  
-  .booklist {
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  img {
-    width: 20vw;
-    height: 30vw;
+  #form-element label {
+    font-weight: bold;
+    margin-right: 1%;
   }
   
   #comment-input {
     height: 100px;
     inline-size: 100px;
-    width: 200px;
+    width: 50%;
+    border-radius: 50px;
+    padding: 21px;
+    text-align: center;
+    margin-right: 5%;
+  }
+
+
+  /*
+  List of reviews/pg bottom
+  */
+  .second-half {
+    padding-bottom: 10%;
+  }
+
+  #review-list {
+    text-align: center;
+    background-color: rgba(242,239,234,0.8);
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    font-weight: 550;
+    font-size: medium;
+    /* font-family: ; */
+  }
+
+  .btn {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 10%;
+    float: right;
+    border-radius: 25%;
+  }
+
+  .comment-div {
+    overflow-wrap: break-word;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    background-color: rgba(191,223,212,0.8);
+  }
+
+  .comment-p {
+    display: inline-block;
+    white-space: normal;
+    text-align: center;
+    width: 80%;
+    overflow-wrap: break-word;
+  }
+
+  
+  #avg-info {
+    margin-left: 20px;
   }
