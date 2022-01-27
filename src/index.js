@@ -34,8 +34,28 @@ function renderBookInfo(book){
 function renderReviewAvg(bookObj) {
     let reviewTotal = bookObj.reviews.reduce((total, review) => {
         return total += review.rating },0)
-    stars.textContent = `${(reviewTotal/bookObj.reviews.length).toFixed(1)} out of 5`
+    let averageCalc = (reviewTotal/bookObj.reviews.length)
+    stars.textContent = `${averageCalc.toFixed(1)} out of 5`
     reviewCount.textContent = (bookObj.reviews.length === 1) ? `${bookObj.reviews.length} review` : `${bookObj.reviews.length} reviews`
+
+    fillStarsBasedOnRating(averageCalc)
+}
+
+function fillStarsBasedOnRating(avgCalc) {
+    const starIcons = document.querySelector('.star-icons')
+
+    let roundedCalc = Math.round(avgCalc)
+    if (roundedCalc === 1) {
+        starIcons.textContent = "★☆☆☆☆"
+    } else if (roundedCalc === 2) {
+        starIcons.textContent = "★★☆☆☆"
+    } else if (roundedCalc === 3) {
+        starIcons.textContent = "★★★☆☆"
+    } else if (roundedCalc === 4) {
+        starIcons.textContent = "★★★★☆"
+    } else if (roundedCalc === 5) {
+        starIcons.textContent = "★★★★★"
+    }
 }
 
 function removeAllChildren(parent) {
@@ -140,4 +160,3 @@ form.addEventListener('submit', e => {
     renderBookInfo(book)
     })
 })
-
