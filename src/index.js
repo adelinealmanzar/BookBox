@@ -47,17 +47,20 @@ function removeAllChildren(parent) {
 function renderBookReviews(book) {
     book.reviews.forEach(review => {
         let newDiv = document.createElement('div')
+        newDiv.classList = 'comment-div'
 
         let newRatingP = document.createElement('p')
         newRatingP.textContent = `${review.rating} stars`
 
-        let newCommentP = document.createElement('p') //TODO: maybe global scope
+        let newCommentP = document.createElement('p')
         newCommentP.textContent = `Comment: ${review.comment}`
+        newCommentP.classList = 'comment-p'
 
         let deleteButton = document.createElement('button')
         deleteButton.textContent =' X '
-        let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
+        deleteButton.classList = 'btn'
         
+        let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
         deleteButton.addEventListener('click', e => {
             newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
 
@@ -104,6 +107,7 @@ function renderBookList(booksArr) {
     booksArr.forEach(book => {
         let newBookLi = document.createElement('li')
         newBookLi.textContent = book.title
+        newBookLi.classList = 'book-li'
 
         let bookID = book.id
         newBookLi.id = bookID

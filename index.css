@@ -44,7 +44,7 @@ body {
     list-style-type: none;
   }
 
-  [id='1'], [id='2'], [id='3'], [id='4'], [id='5'], [id='6'], [id='7'], [id='8'], [id='9'], [id='10'], [id='11'], [id='12'] {
+  .book-li {
     /* border: 1px solid #000;
     padding: 8px 16px;
     border-bottom: 1px solid #000000; */
@@ -182,20 +182,45 @@ body {
   /*
   List of reviews/pg bottom
   */
+  .second-half {
+    padding-bottom: 10%;
+  }
 
   #review-list {
     text-align: center;
-    background-color: white;
-    border-radius: 20%;
+    background-color: rgba(242,239,234,0.8);
+    /* border: 1px solid #000000; */
+    margin-bottom: 10%;
+    padding-top: 3%;
+    /* border-radius: 20%; */
+  }
+
+  .btn {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 10%;
+    float: right;
+    border-radius: 25%;
+  }
+
+  .comment-div {
+    overflow-wrap: break-word;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    background-color: rgba(191,223,212,0.8);
+  }
+
+  .comment-p {
+    display: inline-block;
+    white-space: normal;
+    text-align: center;
+    width: 80%;
+    overflow-wrap: break-word;
   }
 
   
   #avg-info {
     margin-left: 20px;
   }
-
-
-
-
-
-
