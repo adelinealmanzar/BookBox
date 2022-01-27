@@ -115,27 +115,40 @@ body {
   Average Info
   Right
   */
-  .stars {
+  .star-and-num-div {
+    /* white-space: nowrap; */
     background-color: rgba(255,237,135,.85);
     padding: 5px;
     color: black;
     border-radius: 25px;
     border: 1px solid #000000;
     padding: 10px;
-    margin-top: 30px
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 5%;
+    margin-left: 20%;
+  }
+  .staricons {
+    white-space: nowrap;
+  }
+  .avg-stars-num {
+    white-space: nowrap;
+    padding-left: 3%;
+    padding-right: 3%
   }
   
   #review-count{
-    background-color: rgba(255,237,135,.85);
+    /* background-color: rgba(255,237,135,.85);
     color: rgb(0, 0, 0);
     border-radius: 25px;
     border: 1px solid #000000;
-    padding-left: 10px;
+    padding-left: 10px; */
     font-size: smaller;
+    padding-right: 3%;
   }
 
   .description {
-    margin-top: 30px;
+    margin-top: 15px;
     background-color: rgba(234, 240, 241, 0.85);
     border-radius: 25px;
     border: 1px solid #000000;
