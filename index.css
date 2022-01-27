@@ -12,7 +12,7 @@ body {
   .heading {
     margin-bottom: 40px;
     /* background-color: rgb(134, 236, 177); */
-    background-image: linear-gradient(rgb(241, 129, 210), rgba(249, 159, 25, 0.904));
+    background-image: linear-gradient(rgba(255,196,188, 0.904), rgba(255,237,135,255));
     max-height: 50%
   }
   #logo{
@@ -148,7 +148,7 @@ body {
     border: 2px solid #000;
     padding: 8px 16px;
     border-bottom: 1px solid #000000;
-    background:rgba(242, 113, 203, 0.8)
+    background:rgba(191,223,212, 0.8)
 
   }
 
@@ -159,8 +159,8 @@ body {
     border-radius: 25px;
     border: 1px solid #000000;
     padding: 10px;
-    background: rgba(150, 245, 112, 0.6);
-    font-weight: 600;
+    background: rgba(255,196,188, 0.9);
+    font-weight: 800;
     /* width: 200px;
     height: 150px; */
   }
