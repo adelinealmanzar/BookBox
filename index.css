@@ -1,5 +1,5 @@
 body {
-    background-color: #49f760;
+    background-image: url("membackground.jpeg");
 }
   /*
   Overall Structure
@@ -11,13 +11,16 @@ body {
 
   .heading {
     margin-bottom: 40px;
-    background-color: rgb(243, 167, 233);
+    /* background-color: rgb(134, 236, 177); */
+    background-image: linear-gradient(rgba(255,196,188, 0.904), rgba(255,237,135,255));
+    max-height: 50%
   }
   #logo{
     display: block;
     margin: auto;
-    height: 30vw;
-    width: 30vw;
+    height: 11vw;
+    width: 14vw;
+    padding-bottom: 5px
   }
   .webpage-title {
     /* background-image: url("download3.jpeg"); */
@@ -38,7 +41,6 @@ body {
 
   #books {
     font-size: 16px;
-    text-transform: uppercase;
     list-style-type: none;
   }
 
@@ -143,4 +145,22 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     width: 300px;
     height: auto;
+    border: 2px solid #000;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000000;
+    background:rgba(191,223,212, 0.8)
+
+  }
+
+  [id='1'], [id='2'], [id='3'], [id='4'], [id='5'], [id='6'], [id='7'], [id='8'], [id='9'], [id='10'], [id='11'], [id='12'] {
+    /* border: 1px solid #000;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000000; */
+    border-radius: 25px;
+    border: 1px solid #000000;
+    padding: 10px;
+    background: rgba(255,196,188, 0.9);
+    font-weight: 800;
+    /* width: 200px;
+    height: 150px; */
   }
