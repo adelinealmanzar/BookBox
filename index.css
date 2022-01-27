@@ -1,5 +1,5 @@
 body {
-    background-color: #ebebeb;
+    background-color: #49f760;
 }
   /*
   Overall Structure
@@ -11,10 +11,17 @@ body {
 
   .heading {
     margin-bottom: 40px;
+    background-color: rgb(243, 167, 233);
   }
-
+  #logo{
+    display: block;
+    margin: auto;
+    height: 30vw;
+    width: 30vw;
+  }
   .webpage-title {
-    background-image: url("download3.jpeg");
+    /* background-image: url("download3.jpeg"); */
+    background-color: #f7b1d1;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
