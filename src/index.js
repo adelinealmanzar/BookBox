@@ -53,7 +53,7 @@ function renderBookReviews(book) {
         newRatingP.textContent = `${review.rating} stars`
 
         let newCommentP = document.createElement('p')
-        newCommentP.textContent = `Comment: ${review.comment}`
+        newCommentP.textContent = review.comment
         newCommentP.classList = 'comment-p'
 
         let deleteButton = document.createElement('button')

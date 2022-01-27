@@ -67,7 +67,7 @@ body {
   #author {
     white-space: nowrap;
     font-size: medium;
-    font-weight: normal;
+    font-weight: 600px;
     margin-top: 30px;
     background-color: rgba(234, 240, 241, 0.85);
     border-radius: 25px;
@@ -99,6 +99,7 @@ body {
     white-space: nowrap;
     padding: 1em;
     text-align: right;
+    font-weight: 700px;
     background-color: rgba(234, 240, 241, 0.85);
     border-radius: 25px;
     border: 1px solid #000000;
@@ -163,9 +164,11 @@ body {
   
   .submit {
     color: #000000;
+    font-weight: 500px;
     padding: 5px;
     border-radius: 50px;
-    margin-left: 5%;
+    margin-left: 1%;
+    background-color: rgba(234, 240, 241, 0.85);
   }
   
   #review-form {
@@ -174,17 +177,18 @@ body {
 
   #form-element {
     margin: 5%;
+    font-size: medium;
   }
   
   #form-element label {
     font-weight: bold;
-    margin-right: 5%;
+    margin-right: 1%;
   }
   
   #comment-input {
     height: 100px;
     inline-size: 100px;
-    width: 200px;
+    width: 50%;
     border-radius: 50px;
     padding: 21px;
     text-align: center;
@@ -202,10 +206,12 @@ body {
   #review-list {
     text-align: center;
     background-color: rgba(242,239,234,0.8);
-    /* border: 1px solid #000000; */
     margin-bottom: 10%;
     padding-top: 3%;
-    /* border-radius: 20%; */
+    padding-bottom: 5%;
+    font-weight: 550;
+    font-size: medium;
+    /* font-family: ; */
   }
 
   .btn {
