@@ -113,6 +113,8 @@ body {
 
   #review-list {
     text-align: center;
+    background-color: white;
+    border-radius: 20%;
   }
 
   
