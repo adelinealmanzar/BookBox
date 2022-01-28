@@ -44,16 +44,22 @@ function fillStarsBasedOnRating(avgCalc) {
     const starIcons = document.querySelector('.star-icons')
 
     let roundedCalc = Math.round(avgCalc)
-    if (roundedCalc === 1) {
-        starIcons.textContent = "★☆☆☆☆"
-    } else if (roundedCalc === 2) {
-        starIcons.textContent = "★★☆☆☆"
-    } else if (roundedCalc === 3) {
-        starIcons.textContent = "★★★☆☆"
-    } else if (roundedCalc === 4) {
-        starIcons.textContent = "★★★★☆"
-    } else if (roundedCalc === 5) {
-        starIcons.textContent = "★★★★★"
+    switch (roundedCalc) {
+        case 1:
+            starIcons.textContent = "★☆☆☆☆";
+            break;
+        case 2:
+            starIcons.textContent = "★★☆☆☆";
+            break;
+        case 3:
+            starIcons.textContent = "★★★☆☆";
+            break;
+        case 4:
+            starIcons.textContent = "★★★★☆";
+            break;
+        case 5:
+            starIcons.textContent = "★★★★★";
+            break;
     }
 }
 
@@ -76,23 +82,13 @@ function renderBookReviews(book) {
         let newCommentP = document.createElement('p')
         newCommentP.textContent = review.comment
         newCommentP.classList = 'comment-p'
-        
-        function updateDBWithDelete(e, book) {
-            let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
-            newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
-        
-            // Patch new book object with newly-created reviews array
-            postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
-            e.target.parentNode.remove()
-        }
 
         let deleteButton = document.createElement('button')
         deleteButton.textContent =' X '
         deleteButton.classList = 'btn'
         
         deleteButton.addEventListener('click', e => {
-            updateDBWithDelete(e, book)
-            // e.target.parentNode.remove()
+            updateDBWithDelete(e, book, review)
             renderReviewAvg(mkBookObjToPatch(newReviewsArray, book))
         })
 
@@ -106,12 +102,22 @@ function renderBookReviews(book) {
             document.querySelector('input').value = parseInt(toEditRating)
 
             e.target.parentNode.remove()
-            updateDBWithDelete(e, book)
+            updateDBWithDelete(e, book, review)
         })
 
         newDiv.append(newRatingP, newCommentP, deleteButton)
         reviewListUl.appendChild(newDiv)
     })
+}
+
+
+function updateDBWithDelete(e, book, review) {
+    let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
+    newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
+
+    // Patch new book object with newly-created reviews array
+    postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
+    e.target.parentNode.remove()
 }
 
 function postNewBookRating(obj) {
