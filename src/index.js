@@ -102,7 +102,7 @@ function renderBookReviews(book) {
             let toEditComment = e.target.innerText
             let toEditRating = e.target.previousSibling.innerText[0]
 
-            commentInput.textContent = toEditComment
+            commentInput.value = toEditComment
             document.querySelector('input').value = parseInt(toEditRating)
 
             e.target.parentNode.remove()
