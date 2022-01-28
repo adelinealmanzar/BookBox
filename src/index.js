@@ -91,6 +91,12 @@ function renderBookReviews(book) {
 
         newDiv.append(newRatingP, newCommentP, deleteButton)
         reviewListUl.appendChild(newDiv)
+
+        /*
+        The following two event listeners would ideally be taken out
+        of this forEach fn but we couldn't get itereation through HTML
+        collection to work
+        */
         
         // Click delete button to delete review
         deleteButton.addEventListener('click', e => {
