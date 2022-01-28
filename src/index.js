@@ -17,6 +17,7 @@ fetch('http://localhost:3000/Books')
         renderBookList(books)
     })
 
+
 function renderBookInfo(book){
     title.textContent = book.title
     title.name = book.id
@@ -39,6 +40,7 @@ function renderReviewAvg(bookObj) {
 
     fillStarsBasedOnRating(averageCalc)
 }
+
 
 function fillStarsBasedOnRating(avgCalc) {
     const starIcons = document.querySelector('.star-icons')
@@ -63,12 +65,12 @@ function fillStarsBasedOnRating(avgCalc) {
     }
 }
 
+
 function removeAllChildren(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild)
     }
 }
-
 
 
 function renderBookReviews(book) {
@@ -85,14 +87,18 @@ function renderBookReviews(book) {
 
         let deleteButton = document.createElement('button')
         deleteButton.textContent =' X '
-        deleteButton.classList = 'btn'
+        deleteButton.classList = 'delete-btn'
+
+        newDiv.append(newRatingP, newCommentP, deleteButton)
+        reviewListUl.appendChild(newDiv)
         
+        // Click delete button to delete review
         deleteButton.addEventListener('click', e => {
             updateDBWithDelete(e, book, review)
             renderReviewAvg(mkBookObjToPatch(newReviewsArray, book))
         })
 
-        // Function to double click
+        // Double click to edit
         newCommentP.addEventListener('dblclick', e => {
             e.preventDefault()
             let toEditComment = e.target.innerText
@@ -104,9 +110,6 @@ function renderBookReviews(book) {
             e.target.parentNode.remove()
             updateDBWithDelete(e, book, review)
         })
-
-        newDiv.append(newRatingP, newCommentP, deleteButton)
-        reviewListUl.appendChild(newDiv)
     })
 }
 
@@ -119,6 +122,7 @@ function updateDBWithDelete(e, book, review) {
     postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
     e.target.parentNode.remove()
 }
+
 
 function postNewBookRating(obj) {
     fetch(`http://localhost:3000/Books/${obj.id}`, {
@@ -134,6 +138,7 @@ function postNewBookRating(obj) {
     })
 }
 
+
 function mkBookObjToPatch(reviewsArr, book) {
     let wholeBookObj = {
         "id": book.id,
@@ -148,6 +153,7 @@ function mkBookObjToPatch(reviewsArr, book) {
     return wholeBookObj
 }
 
+
 function renderBookList(booksArr) {
     booksArr.forEach(book => {
         let newBookLi = document.createElement('li')
@@ -161,7 +167,6 @@ function renderBookList(booksArr) {
         newBookLi.addEventListener('click', e => renderBookInfo(book))
     })
 }
-
 
 
 form.addEventListener('submit', e => {
@@ -185,14 +190,5 @@ form.addEventListener('submit', e => {
     })
     form.reset()
     commentInput.textContent = ''
-})
-
-// let commentPColl= document.getElementsByClassName('comment-p')
-// console.log(commentPColl)
-// let commentPArr = Array.from(commentPColl)
-// console.log(commentPColl.firstChild.innerText)
-
-// console.log(Array.isArray(commentPColl))
-// for (let i=0; i < commentPColl.children.length; i++) {
-//     console.log(commentPColl.children[i])
-// }
+    }
+)

@@ -2,17 +2,11 @@ body {
     background-image: url("assets/membackground.jpeg");
 }
   /*
-  Overall Structure
+  Header/top bar
   */
-
-  /*
-  Header/Page title
-  */
-
   .heading {
     margin-bottom: 40px;
     background-color: rgba(242,239,234,.9);
-    /* background-image: linear-gradient(rgba(255,196,188, 0.904), rgba(255,237,135,255)); */
     max-height: 50%
   }
   #logo{
@@ -23,7 +17,6 @@ body {
     padding-bottom: 5px
   }
   .webpage-title {
-    /* background-image: url("download3.jpeg"); */
     background-color: #f7b1d1;
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,29 +29,23 @@ body {
   }
 
   /*
-  Book list/left
+  Book list/top left
   */
-
   #books {
     font-size: 16px;
     list-style-type: none;
   }
 
   .book-li {
-    /* border: 1px solid #000;
-    padding: 8px 16px;
-    border-bottom: 1px solid #000000; */
     border-radius: 25px;
     border: 1px solid #000000;
     padding: 10px;
     background: rgba(255,196,188, 0.9);
     font-weight: 800;
-    /* width: 200px;
-    height: 150px; */
   }
 
   /*
-  Book image/pg middle
+  Book image/top middle
   */
   .horizontal {
     display: inline-block;
@@ -87,6 +74,7 @@ body {
     background:rgba(191,223,212, 0.95)
 
   }
+
   #above-img-info {
     padding-bottom: 0em;
   }
@@ -95,6 +83,7 @@ body {
     height: 80px;
     white-space: nowrap;
   }
+
   #pages {
     white-space: nowrap;
     padding: 1em;
@@ -113,11 +102,9 @@ body {
   }
 
   /*
-  Average Info
-  Right
+  Average Info/top right
   */
   .star-and-num-div {
-    /* white-space: nowrap; */
     background-color: rgba(255,237,135,.85);
     padding: 5px;
     color: black;
@@ -129,9 +116,11 @@ body {
     padding-right: 5%;
     margin-left: 20%;
   }
+
   .staricons {
     white-space: nowrap;
   }
+
   .avg-stars-num {
     white-space: nowrap;
     padding-left: 3%;
@@ -139,11 +128,6 @@ body {
   }
   
   #review-count{
-    /* background-color: rgba(255,237,135,.85);
-    color: rgb(0, 0, 0);
-    border-radius: 25px;
-    border: 1px solid #000000;
-    padding-left: 10px; */
     font-size: smaller;
     padding-right: 3%;
   }
@@ -157,12 +141,10 @@ body {
     font-size: 120%
   }
 
-
   /*
-  Form
+  Form/middle middle
   */
-  
-  .submit {
+  .submit-btn {
     color: #000000;
     font-weight: 500px;
     padding: 5px;
@@ -195,9 +177,8 @@ body {
     margin-right: 5%;
   }
 
-
   /*
-  List of reviews/pg bottom
+  List of reviews/bottom middle
   */
   .second-half {
     padding-bottom: 10%;
@@ -211,11 +192,9 @@ body {
     padding-bottom: 5%;
     font-weight: 550;
     font-size: medium;
-    /* font-family: ; */
   }
 
-  .btn {
-    display: inline-block;
+  .delete-btn {
     white-space: nowrap;
     margin-right: 10%;
     float: right;
@@ -239,7 +218,6 @@ body {
     overflow-wrap: break-word;
   }
 
-  
   #avg-info {
     margin-left: 20px;
   }
