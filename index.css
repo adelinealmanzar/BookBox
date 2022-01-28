@@ -187,7 +187,7 @@ body {
   #review-list {
     text-align: center;
     background-color: rgba(242,239,234,0.8);
-    margin-bottom: 10%;
+    margin-bottom: 1%;
     padding-top: 3%;
     padding-bottom: 5%;
     font-weight: 550;
@@ -220,4 +220,28 @@ body {
 
   #avg-info {
     margin-left: 20px;
+  }
+
+  /*
+  Footer
+  */
+  .footer {
+    text-align: center;
+    background-color: rgba(242,239,234,0.8);
+    font-size: medium;
+    font-weight: 600;
+    padding-bottom: 4%;
+    padding-top: 3%;
+  }
+
+  .footer-text {
+    margin: 0.5%;
+  }
+
+  a {
+    color: rgb(110,210,210);
+  }
+
+  a:hover {
+    color: rgb(218,162,225);
   }
