@@ -17,6 +17,7 @@ fetch('http://localhost:3000/Books')
         renderBookList(books)
     })
 
+
 function renderBookInfo(book){
     title.textContent = book.title
     title.name = book.id
@@ -40,29 +41,36 @@ function renderReviewAvg(bookObj) {
     fillStarsBasedOnRating(averageCalc)
 }
 
+
 function fillStarsBasedOnRating(avgCalc) {
     const starIcons = document.querySelector('.star-icons')
 
     let roundedCalc = Math.round(avgCalc)
-    if (roundedCalc === 1) {
-        starIcons.textContent = "★☆☆☆☆"
-    } else if (roundedCalc === 2) {
-        starIcons.textContent = "★★☆☆☆"
-    } else if (roundedCalc === 3) {
-        starIcons.textContent = "★★★☆☆"
-    } else if (roundedCalc === 4) {
-        starIcons.textContent = "★★★★☆"
-    } else if (roundedCalc === 5) {
-        starIcons.textContent = "★★★★★"
+    switch (roundedCalc) {
+        case 1:
+            starIcons.textContent = "★☆☆☆☆";
+            break;
+        case 2:
+            starIcons.textContent = "★★☆☆☆";
+            break;
+        case 3:
+            starIcons.textContent = "★★★☆☆";
+            break;
+        case 4:
+            starIcons.textContent = "★★★★☆";
+            break;
+        case 5:
+            starIcons.textContent = "★★★★★";
+            break;
     }
 }
+
 
 function removeAllChildren(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild)
     }
 }
-
 
 
 function renderBookReviews(book) {
@@ -76,27 +84,27 @@ function renderBookReviews(book) {
         let newCommentP = document.createElement('p')
         newCommentP.textContent = review.comment
         newCommentP.classList = 'comment-p'
-        
-        function updateDBWithDelete(e, book) {
-            let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
-            newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
-        
-            // Patch new book object with newly-created reviews array
-            postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
-            e.target.parentNode.remove()
-        }
 
         let deleteButton = document.createElement('button')
         deleteButton.textContent =' X '
-        deleteButton.classList = 'btn'
+        deleteButton.classList = 'delete-btn'
+
+        newDiv.append(newRatingP, newCommentP, deleteButton)
+        reviewListUl.appendChild(newDiv)
+
+        /*
+        The following two event listeners would ideally be taken out
+        of this forEach fn but we couldn't get itereation through HTML
+        collection to work
+        */
         
+        // Click delete button to delete review
         deleteButton.addEventListener('click', e => {
-            updateDBWithDelete(e, book)
-            // e.target.parentNode.remove()
+            updateDBWithDelete(e, book, review)
             renderReviewAvg(mkBookObjToPatch(newReviewsArray, book))
         })
 
-        // Function to double click
+        // Double click to edit
         newCommentP.addEventListener('dblclick', e => {
             e.preventDefault()
             let toEditComment = e.target.innerText
@@ -106,13 +114,21 @@ function renderBookReviews(book) {
             document.querySelector('input').value = parseInt(toEditRating)
 
             e.target.parentNode.remove()
-            updateDBWithDelete(e, book)
+            updateDBWithDelete(e, book, review)
         })
-
-        newDiv.append(newRatingP, newCommentP, deleteButton)
-        reviewListUl.appendChild(newDiv)
     })
 }
+
+
+function updateDBWithDelete(e, book, review) {
+    let commentIndex = book.reviews.map(element => element.comment).indexOf(review.comment)
+    newReviewsArray = book.reviews.slice(0,commentIndex).concat(book.reviews.slice(commentIndex + 1, book.reviews.length))
+
+    // Patch new book object with newly-created reviews array
+    postNewBookRating(mkBookObjToPatch(newReviewsArray, book))
+    e.target.parentNode.remove()
+}
+
 
 function postNewBookRating(obj) {
     fetch(`http://localhost:3000/Books/${obj.id}`, {
@@ -128,6 +144,7 @@ function postNewBookRating(obj) {
     })
 }
 
+
 function mkBookObjToPatch(reviewsArr, book) {
     let wholeBookObj = {
         "id": book.id,
@@ -142,6 +159,7 @@ function mkBookObjToPatch(reviewsArr, book) {
     return wholeBookObj
 }
 
+
 function renderBookList(booksArr) {
     booksArr.forEach(book => {
         let newBookLi = document.createElement('li')
@@ -155,7 +173,6 @@ function renderBookList(booksArr) {
         newBookLi.addEventListener('click', e => renderBookInfo(book))
     })
 }
-
 
 
 form.addEventListener('submit', e => {
@@ -179,14 +196,5 @@ form.addEventListener('submit', e => {
     })
     form.reset()
     commentInput.textContent = ''
-})
-
-// let commentPColl= document.getElementsByClassName('comment-p')
-// console.log(commentPColl)
-// let commentPArr = Array.from(commentPColl)
-// console.log(commentPColl.firstChild.innerText)
-
-// console.log(Array.isArray(commentPColl))
-// for (let i=0; i < commentPColl.children.length; i++) {
-//     console.log(commentPColl.children[i])
-// }
+    }
+)
