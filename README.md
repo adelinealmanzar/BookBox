@@ -1,6 +1,6 @@
 # BookBox
 
-Basic story of application:
+Story of application:
 - This app will provide book reviews and allow users to write reviews
 
 Purpose of project:
